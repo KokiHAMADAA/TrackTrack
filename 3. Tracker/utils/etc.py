@@ -11,11 +11,11 @@ def set_parameters(args, vid_name, mode):
     if 'MOT17' in vid_name:
         # Path
         if mode == 'val':
-            args.pickle_path = args.pickle_dir + 'mot17_val_0.80.pickle'
+            args.pickle_path = args.pickle_dir + 'mot17_val_0.95.pickle' #Track(validation)の出力閾値はハードコーディングされてるので，手動で変更
             args.pickle_path_95 = args.pickle_dir + 'mot17_val_0.95.pickle'
             args.data_path = args.data_dir + 'MOT17/train/'
         else:
-            args.pickle_path = args.pickle_dir + 'mot17_test_0.80.pickle'
+            args.pickle_path = args.pickle_dir + 'mot17_test_0.95.pickle' #Track(test)の出力閾値はハードコーディングされてるので，手動で変更
             args.pickle_path_95 = args.pickle_dir + 'mot17_test_0.95.pickle'
             args.data_path = args.data_dir + 'MOT17/test/'
 

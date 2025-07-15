@@ -10,9 +10,11 @@ for tracker in trackers:
 
     if 'mot17' in tracker:
         for file in files:
-            file_path = path + file
-            shutil.copy(file_path, file_path.replace('FRCNN', 'SDP'))
-            shutil.copy(file_path, file_path.replace('FRCNN', 'DPM'))
+            file_path = os.path.join(path, file)
+            if os.path.isfile(file_path):
+              if 'FRCNN' in file:
+                shutil.copy(file_path, file_path.replace('FRCNN', 'SDP'))
+                shutil.copy(file_path, file_path.replace('FRCNN', 'DPM'))
 
         dummy_path = './utils/mot17_dummy/'
         dummy_files = os.listdir(dummy_path)
